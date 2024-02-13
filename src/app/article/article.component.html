@@ -1,0 +1,18 @@
+<div class="card m-1" style="width: 18rem;">
+    <img [src]="urlImg" class="card-img-top" [alt]=" textAltImg">
+    <div class="card-body">
+        <h5 class="card-title">
+            {{ titreArticle }}
+            <span *ngIf="dispo === false;">- Indisponible</span>
+        </h5>
+        
+        <h6 class="card-text">{{ prixArticle }} €</h6>
+        <p class="card-text">{{ description }}</p>
+       
+        <a href="#" class="btn btn-dark" (click)="onLike()">J'aime</a>
+        <p>Nombre de likes: {{ totalNbLikes }}</p>
+
+        <input type="text" placeholder="Ecris ton commentaire" [(ngModel)]="comment">
+        <p>Commentaire: {{ comment }}</p>
+    </div>
+  </div>

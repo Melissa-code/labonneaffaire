@@ -1,0 +1,23 @@
+.navbar {
+    background-color: black;
+    color: white; 
+}
+
+a, li {
+    color: white;
+}
+
+a:hover, li:hover {
+    color: yellow;
+}
+
+.footer {
+    background-color: black;
+}
+
+#alertMessage {
+    text-align: center;
+    padding-top: 20px;
+    color: green;
+    font-size:1.2rem;
+}
