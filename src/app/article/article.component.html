@@ -1,7 +1,7 @@
 <div class="card m-1" style="width: 18rem;">
     <img [src]="urlImg" class="card-img-top" [alt]=" textAltImg">
     <div class="card-body">
-        <h5 class="card-title">
+        <h5 class="card-title" [ngStyle]="{ color: getColor() }">
             {{ titreArticle }}
             <span *ngIf="dispo === false;">- Indisponible</span>
         </h5>

@@ -11,11 +11,8 @@ import { CommonModule } from '@angular/common';
 })
 export class ArticleComponent implements OnInit {
 
-  //textAltImg: string = "Titre alternative de l'image"; 
-  //urlImg: string = "https://via.placeholder.com/400x250"; 
   totalNbLikes: number = 0;
   comment: string = "Ceci est un commentaire.";
-  //dispo: boolean = false; 
 
   @Input() titreArticle: string; 
   @Input() prixArticle: number; 
@@ -36,6 +33,13 @@ export class ArticleComponent implements OnInit {
   onLike() {
     this.totalNbLikes++;
     this.info.emit(this.titreArticle); 
+  }
 
+  getColor() {
+    if (this.dispo === true) {
+      return "green"; 
+    } else {
+      return "red"; 
+    }
   }
 }
