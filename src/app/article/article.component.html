@@ -9,10 +9,26 @@
         <h6 class="card-text">{{ prixArticle }} €</h6>
         <p class="card-text">{{ description }}</p>
        
-        <a href="#" class="btn btn-dark" (click)="onLike()">J'aime</a>
+        <a href="#" class="btn btn-dark" 
+            (click)="onLike()"
+            [ngClass]="{
+                'show' : jaime === true,
+                'hidden' : jaime === false,
+            }">
+            J'aime
+        </a>
+        <a href="#" class="btn btn-dark noLike" 
+            (click)="onLike()"
+            [ngClass]="{
+                'show' : jaime === false, 
+                'hidden' : jaime === true,
+            }">
+            Je n'aime pas
+        </a>
+        
         <p>Nombre de likes: {{ totalNbLikes }}</p>
 
         <input type="text" placeholder="Ecris ton commentaire" [(ngModel)]="comment">
         <p>Commentaire: {{ comment }}</p>
     </div>
-  </div>
+</div>

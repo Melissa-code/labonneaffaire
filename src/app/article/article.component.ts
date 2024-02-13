@@ -20,6 +20,7 @@ export class ArticleComponent implements OnInit {
   @Input() urlImg: string;  
   @Input() textAltImg: string;  
   @Input() dispo: boolean; 
+  jaime: boolean = true; 
   
   @Output() info = new EventEmitter<string>();
 
@@ -31,7 +32,15 @@ export class ArticleComponent implements OnInit {
 
   // nomenclature on (this pour préciser que variable est dans la classe)
   onLike() {
-    this.totalNbLikes++;
+    //this.totalNbLikes++;
+    //this.info.emit(this.titreArticle); 
+    if (this.jaime === true) {
+      this.totalNbLikes++;
+      this.jaime = false; 
+    } else {
+      this.totalNbLikes--;
+      this.jaime = true; 
+    }
     this.info.emit(this.titreArticle); 
   }
 
