@@ -32,8 +32,6 @@ export class ArticleComponent implements OnInit {
 
   // nomenclature on (this pour préciser que variable est dans la classe)
   onLike() {
-    //this.totalNbLikes++;
-    //this.info.emit(this.titreArticle); 
     if (this.jaime === true) {
       this.totalNbLikes++;
       this.jaime = false; 
